@@ -1,0 +1,100 @@
+IRTE Conventions
+- "id" is used to refer to the id of an RTE editor.  This id is the same value as used by the textarea.
+- "irte" (all lower case) is used to pass the "this" pointer to nameless functions
+
+
+
+Function: GetRTE(id)
+Purpose: To aquire a pointer to an RTE editor object via it's id value.
+Usage: var rte = GetRTE('demo');
+Pre-Condition: CreateRTE or CreateRTEs has already been called with the specified id value and a valid RTE object has been made.
+Post-Condition: The returned value is a valid pointer to an RTE editor object or undefined if the id value is invalid.
+
+Function: CreateRTEs(initArray)
+Purpose: To create and insert an RTE editors where an html form element with the specified id is found.
+Usage: CreateRTEs([['demo',640,480],['demo2',320,240]]); OR CreateRTEs([['demo',640,480]]);
+Usage Note: initArray is an array of arrays.  The outer array is the list of editors, for each editor the inner array is of the format [id,width,height].
+Pre-Condition: A form element that supports the methods of an html 4.0 textarea can be referenced by a call to getElementsById(id), id values with the post fix "_rte"+x do not already exist in the document, and the width and height value are postive integer values.
+Post-Condition: A new RTE editor object(s) has been created and attached to the document and GetRTE(id) may be used to retrieve this object.
+
+Function: CreateRTE(id,rteWidth,rteHeight)
+Purpose: To create and insert an RTE editor where an html form element with the specified id is found.
+Usage: var rte = CreateRTE('demo',640,480);
+Pre-Condition: A form element that supports the methods of an html 4.0 textarea can be referenced by a call to getElementsById(id), id values with the post fix "_rte"+x do not already exist in the document, and the width and height value are postive integer values.
+Post-Condition: The returned value is a valid pointer to a new RTE editor object and GetRTE(id) may be used to retrieve this object.
+
+
+Function: ToggleRTEVis(id)
+Purpose: To toggle the view source with viewing the RTE editor in response to the status of the view source check box.
+Usage: ToggleRTEVis('demo');
+Pre-Condition: CreateRTE or CreateRTEs has already been called with the specified id value and a valid RTE object has been made.
+Post-Condition: If the view source check box is checked then the original textarea is displayed with the current source text.  If it is not checked then the editor is displayed with the current formatted text.  If the "allowEditSource" flag is set to true, then the data in the textarea is transfered to the editor.
+
+Function: GetRTEHTML(id)
+Purpose: To acquire the current HTML text from the editor.
+Usage: var htmlText = GetRTEHTML('demo');
+Pre-Condition: CreateRTE or CreateRTEs has already been called with the specified id value and a valid RTE object has been made.
+Post-Condition: The return value is equal to the current HTML text from the editor.
+
+Function: SetRTEHTML(id,htmlText)
+Purpose: To set the current HTML text for the editor.
+Usage: SetRTEHTML('demo','Test of <b>formatted</b> text.');
+Pre-Condition: CreateRTE or CreateRTEs has already been called with the specified id value and a valid RTE object has been made.
+Post-Condition: The editor referenced by the specified id value now contains the html text from htmlText.
+
+Function: RemoveButton(buttonName)
+Purpose: Remove a button from the tool bars of all subsequently created editors.
+Usage: RemoveButton('Bold');
+Pre-Condition: None.
+Post-Condition: The first button with the name/alt text equal to buttonName in the array of tool bar buttons has been removed from the list.
+
+Function: AddButton(buttonDesc,position)
+Purpose: Add a button to the tool bars of all subsequently created editors.
+Usage: AddButton(buttonDesc,position);
+
+
+['sel', 'Font',
+				[['Font',''],
+				['Arial','Arial, Helvetica, sans-serif'],
+				['Comic Sans MS','Comic Sans MS, Comic Sans, Arial, Helvetica, sans-serif'],
+				['Courier New','Courier New, Courier, mono'],
+				['Geneva','Geneva, Arial, Helvetica, sans-serif'],
+				['Georgia','Georgia, "Times New Roman", Times, serif'],
+				['Times New Roman','Times New Roman, Times, serif'],
+				['Verdana','Verdana, Arial, Helvetica, sans-serif'],
+				['Other','']],
+			'fontname','Enter Font Name','']
+			['but',"Insert Image","image.gif","insertimage",'','Enter Image URL','http://'],
+
+Pre-Condition: None.
+Post-Condition: A new button has been added to the array of buttons that will be used to generate all subsequent toolbars.
+
+Function: GetDefaultButtons())
+Purpose: Sets the array of toolbar buttons to the default array.
+Usage: GetDefaultButtons();
+Pre-Condition: None.
+Post-Condition: The array of buttons is set to the default array.
+
+CreateToolBar(id)
+
+CreateSelectList(id,options,cmd,promptUser,def)
+
+CreateButton(id,imgSrc,alt,cmd,params,promptUser,def)
+
+Link(id)
+
+MailTo(id)
+
+
+WindowDiv(id,title,width,contentsE,okFn)
+
+
+
+CreateFormElmt(node,elmtID,lbl,type,options,size)
+
+
+AddEvent(elm,evType,fn,useCapture)
+
+Checkspellfunction()
+
+SubmitPrepfunction()

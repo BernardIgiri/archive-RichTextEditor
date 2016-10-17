@@ -1,0 +1,64 @@
+.rte img:hover {
+	padding: 0px;
+	border: 1px outset;
+	cursor: pointer;
+	cursor: hand;
+	vertical-align: bottom;
+}
+
+.rte img {
+	padding: 1px;
+	cursor: pointer;
+	cursor: hand;
+	vertical-align: bottom;
+}
+
+.rte div {
+	background: #D3D3D3;
+	padding: 1px;
+}
+
+.rteWin {
+	background: #D3D3D3;
+	border: 1px solid;
+	border-color: black;
+}
+
+.rteWin div {
+	background: #CCCCCC;
+	padding: 2px;
+	clear: both;
+}
+
+.rteWin button {
+	width: 75;
+}
+
+.rteWinTitle {
+	padding: 2px;
+	clear: both;
+	font-weight: bold;
+	text-align: center;
+}
+
+.rteWin img {
+	padding: 0px;
+	border: 1px solid;
+	border-color: #CCCCCC;
+	cursor: pointer;
+	cursor: hand;
+}
+
+.rteWin img:hover {
+	padding: 0px;
+	border: 1px solid;
+	border-color: black;
+	cursor: pointer;
+	cursor: hand;
+}
+
+.rteWin label {
+	width: 130px;
+	text-align: right;
+	margin-right: 5px;
+}
